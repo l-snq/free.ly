@@ -2,7 +2,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('node:path');
 
-const squiggy = require("squiggy");
 
 const createWindow = () => {
     const win = new BrowserWindow({
