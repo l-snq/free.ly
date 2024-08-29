@@ -1,7 +1,5 @@
-// do your canvas shit over here
 const { app, BrowserWindow } = require('electron');
 const path = require('node:path');
-
 
 const createWindow = () => {
     const win = new BrowserWindow({
