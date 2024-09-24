@@ -1,3 +1,15 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld(
+	"api", 
+	{
+		canvas: () => { 
+			const thing = require('two.js')
+			return thing
+		},
+		ping: () => ipcRenderer.invoke('ping')
+	}
+)
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
     const element = document.getElementById(selector)
