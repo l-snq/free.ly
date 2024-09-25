@@ -1,4 +1,14 @@
 const { contextBridge, ipcRenderer } = require('electron');
+const Two = require('two.js');
+
+const TwoRect = () => {
+	let _two = new Two({
+		type: Two.types.svg,
+		fullscreen: true,
+
+	})
+	//let Rect = new _two.makeRectangle(_two.width / 2, _two.height /2, 40, 40);
+}
 
 contextBridge.exposeInMainWorld(
 	"api", 
@@ -7,7 +17,7 @@ contextBridge.exposeInMainWorld(
 			const thing = require('two.js')
 			return thing
 		},
-		ping: () => ipcRenderer.invoke('ping')
+		ping: () => ipcRenderer.postMessage('tworect', TwoRect())
 	}
 )
 window.addEventListener('DOMContentLoaded', () => {
