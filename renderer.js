@@ -5,3 +5,6 @@ const func = async () => {
 }
 
 func();
+
+const something = require('two.js');
+console.log(something);

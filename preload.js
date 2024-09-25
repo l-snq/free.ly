@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 	// use this file to load dependencies
 	// look at webpack && electron-forge for quick start stuff
+	// still need to use preload to safely store certain parts of the api i want to use
+	// for example Two.Circ() instead of exporting all of Two.js
 
   for (const dependency of ['chrome', 'node', 'electron']) {
     replaceText(`${dependency}-version`, process.versions[dependency])
