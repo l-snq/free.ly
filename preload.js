@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (element) element.innerText = text
   }
 	// use this file to load dependencies
+	// look at webpack && electron-forge for quick start stuff
 
   for (const dependency of ['chrome', 'node', 'electron']) {
     replaceText(`${dependency}-version`, process.versions[dependency])
